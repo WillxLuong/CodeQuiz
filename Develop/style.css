@@ -1,127 +1,74 @@
-/* Global Styles */
-body, h1, p, ul, li {
+/* Styling for Code Quiz */
+
+/* Reset some default styles */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
-/* Body Styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-}
-
-/* Header Styles */
+/* Header styling */
 header {
-    text-align: center;
-    background-color: #333;
+    background-color: #007BFF;
     color: white;
-    padding: 10px 0;
-}
-
-/* Main Content Styles */
-main {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-}
-
-/* Quiz Container Styles */
-#quiz-container {
     text-align: center;
+    padding: 20px;
+}
+
+/* Main content styling */
+main {
+    text-align: center;
+}
+
+/* Styling for quiz container */
+#quiz-container {
+    display: none;
+}
+
+/* Styling for question and result containers */
+#question-container, #result-container {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    padding: 20px;
     margin-bottom: 20px;
 }
 
-/* Start Button Styles */
-#start-button {
-    padding: 15px 30px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-}
-
-/* Question Container Styles */
-#question-container {
-    display: none;
-    margin-top: 20px;
-}
-
-/* Question Text Styles */
-#question-text {
-    font-size: 18px;
-}
-
-/* Choices List Styles */
-#choices {
-    list-style-type: none;
+/* Styling for lists */
+ul {
+    list-style: none;
     padding: 0;
-    margin-top: 10px;
 }
 
-/* Choice Item Styles */
-#choices li {
+/* Styling for list items */
+li {
     margin: 5px 0;
-    padding: 10px;
-    background-color: #f7f7f7;
-    border: 1px solid #ddd;
-    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
-/* Hover Effect Styles */
-#choices li:hover {
-    background-color: #e3e3e3;
+/* Highlighting for correct answers */
+.correct {
+    background-color: #7FFF7F; /* Green */
 }
 
-/* Result Container Styles */
-#result-container {
-    text-align: center;
-    display: none;
-    margin-top: 20px;
+/* Highlighting for incorrect answers */
+.incorrect {
+    background-color: #FF7F7F; /* Red */
 }
 
-/* Score Styles */
-#score {
-    font-size: 24px;
+/* Styling for answer message */
+#answer-message {
     font-weight: bold;
-    color: #007bff;
 }
 
-/* Initials Input Styles */
-#initials {
+/* Styling for high scores section */
+#high-scores {
+    display: none;
+}
+
+/* Footer styling */
+footer {
+    background-color: #f5f5f5;
     padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-top: 10px;
 }
 
-/* Submit Score Button Styles */
-#submit-score {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-    margin-top: 10px;
-}
-
-/* Responsive Styles */
-@media screen and (max-width: 600px) {
-    main {
-        padding: 10px;
-    }
-
-    /* Adjust styles for smaller screens */
-    #choices li {
-        font-size: 14px;
-    }
-}
+/* Add any additional CSS styling here */

@@ -11,21 +11,28 @@
         <h1>Code Quiz</h1>
     </header>
     <main>
-        <div id="quiz-container">
-            <button id="start-button">Start Quiz</button>
-        </div>
-        <div id="question-container">
-            <p id="question-text"></p>
-            <ul id="choices"></ul>
-        </div>
-        <div id="result-container">
-            <p>Your Score: <span id="score"></span></p>
-            <input type="text" id="initials" placeholder="Enter Initials">
-            <button id="submit-score">Submit Score</button>
-        </div>
+        <section id="quiz-container">
+            <div id="question-container">
+                <h2 id="question-text"></h2>
+                <ul id="choices"></ul>
+                <p id="answer-message"></p>
+            </div>
+            <div id="result-container">
+                <h2>Quiz Complete</h2>
+                <p>Your score: <span id="score"></span></p>
+                <div id="timer-display"></div>
+                <input type="text" id="initials" placeholder="Enter your initials">
+                <button id="submit-score" disabled>Submit Score</button>
+            </div>
+        </section>
+        <section id="high-scores">
+            <button id="view-scores-button">View High Scores</button>
+            <ul id="high-scores-list"></ul>
+        </section>
     </main>
-    <button id="view-scores-button">View High Scores</button>
-    <ul id="high-scores-list"></ul>
+    <footer>
+        <button id="start-button">Start Quiz</button>
+    </footer>
     <script src="./Develop/script.js"></script>
 </body>
 </html>
