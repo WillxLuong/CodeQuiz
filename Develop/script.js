@@ -15,45 +15,41 @@ document.addEventListener("DOMContentLoaded", function () {
     const playAgainButton = document.getElementById("play-again-button");
 
     let highScores = [];
-    let questions = [];
+    let questions = [
+        {
+            question: "What does HTML stand for?",
+            choices: ["Hypertext Markup Language", "Hyperlink and Text Markup Language", "Highly Textual Markup Language"],
+            correctAnswer: "Hypertext Markup Language"
+        },
+        {
+            question: "Which of the following is NOT a JavaScript data type?",
+            choices: ["String", "Number", "Boolean", "Float"],
+            correctAnswer: "Float"
+        },
+        {
+            question: "What is CSS used for?",
+            choices: ["Styling web pages", "Managing server-side operations", "Creating databases", "Analyzing data"],
+            correctAnswer: "Styling web pages"
+        },
+        {
+            question: "What is the purpose of a JavaScript function?",
+            choices: ["To store data", "To style web pages", "To perform a specific task", "To create HTML elements"],
+            correctAnswer: "To perform a specific task"
+        },
+        {
+            question: "What does the 'git commit' command do?",
+            choices: ["Stages changes for commit", "Deletes files from the repository", "Creates a new branch", "Pushes changes to a remote repository"],
+            correctAnswer: "Stages changes for commit"
+        }
+        // Add more questions here
+    ];
+
     let currentQuestionIndex = 0;
     let score = 0;
     let timer;
     let timeLeft = 60; // 60-second timer
 
-    function initializeQuestions() {
-        questions = [
-            {
-                question: "What is 2 + 2?",
-                choices: ["3", "4", "5"],
-                correctAnswer: "4"
-            },
-            {
-                question: "What is 5 * 6?",
-                choices: ["20", "25", "30"],
-                correctAnswer: "30"
-            },
-            {
-                question: "What is 10 / 2?",
-                choices: ["2", "5", "10"],
-                correctAnswer: "5"
-            },
-            {
-                question: "What is 8 - 3?",
-                choices: ["3", "5", "2"],
-                correctAnswer: "5"
-            },
-            {
-                question: "What is 7 * 9?",
-                choices: ["56", "63", "72"],
-                correctAnswer: "63"
-            },
-            // Add more questions here
-        ];
-    }
-
     function startQuiz() {
-        initializeQuestions();
         startButton.style.display = "none";
         quizContainer.style.display = "block";
         questionContainer.style.display = "block";
