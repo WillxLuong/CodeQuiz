@@ -14,7 +14,7 @@ This is a web application for a timed coding quiz with multiple-choice questions
 
 ## Deployment
 
-- Live URL: [Add your live application URL here]
+- Live URL: [https://willxluong.github.io/CodeQuiz/]
 - GitHub Repository: [https://github.com/WillxLuong/CodeQuiz]
 
 The application is deployed and can be accessed at the provided live URL. You can also view the source code on GitHub.
