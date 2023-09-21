@@ -1,14 +1,16 @@
-
+/* Global Styles */
 body, h1, p, ul, li {
     margin: 0;
     padding: 0;
 }
 
+/* Body Styles */
 body {
     font-family: Arial, sans-serif;
     background-color: #f2f2f2;
 }
 
+/* Header Styles */
 header {
     text-align: center;
     background-color: #333;
@@ -16,6 +18,7 @@ header {
     padding: 10px 0;
 }
 
+/* Main Content Styles */
 main {
     max-width: 800px;
     margin: 0 auto;
@@ -25,11 +28,13 @@ main {
     border-radius: 10px;
 }
 
+/* Quiz Container Styles */
 #quiz-container {
     text-align: center;
     margin-bottom: 20px;
 }
 
+/* Start Button Styles */
 #start-button {
     padding: 15px 30px;
     background-color: #007bff;
@@ -40,21 +45,25 @@ main {
     border-radius: 5px;
 }
 
+/* Question Container Styles */
 #question-container {
     display: none;
     margin-top: 20px;
 }
 
+/* Question Text Styles */
 #question-text {
     font-size: 18px;
 }
 
+/* Choices List Styles */
 #choices {
     list-style-type: none;
     padding: 0;
     margin-top: 10px;
 }
 
+/* Choice Item Styles */
 #choices li {
     margin: 5px 0;
     padding: 10px;
@@ -65,22 +74,26 @@ main {
     transition: background-color 0.3s;
 }
 
+/* Hover Effect Styles */
 #choices li:hover {
     background-color: #e3e3e3;
 }
 
+/* Result Container Styles */
 #result-container {
     text-align: center;
     display: none;
     margin-top: 20px;
 }
 
+/* Score Styles */
 #score {
     font-size: 24px;
     font-weight: bold;
     color: #007bff;
 }
 
+/* Initials Input Styles */
 #initials {
     padding: 10px;
     font-size: 16px;
@@ -89,6 +102,7 @@ main {
     margin-top: 10px;
 }
 
+/* Submit Score Button Styles */
 #submit-score {
     padding: 10px 20px;
     background-color: #007bff;
@@ -106,6 +120,7 @@ main {
         padding: 10px;
     }
 
+    /* Adjust styles for smaller screens */
     #choices li {
         font-size: 14px;
     }
