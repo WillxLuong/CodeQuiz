@@ -12,44 +12,50 @@ document.addEventListener("DOMContentLoaded", function () {
     const highScoresList = document.getElementById("high-scores-list");
     const timerDisplay = document.getElementById("timer-display");
     const answerMessage = document.getElementById("answer-message");
+    const playAgainButton = document.getElementById("play-again-button");
 
-    const questions = [
-        {
-            question: "What is 2 + 2?",
-            choices: ["3", "4", "5"],
-            correctAnswer: "4"
-        },
-        {
-            question: "What is 5 * 6?",
-            choices: ["20", "25", "30"],
-            correctAnswer: "30"
-        },
-        {
-            question: "What is 10 / 2?",
-            choices: ["2", "5", "10"],
-            correctAnswer: "5"
-        },
-        {
-            question: "What is 8 - 3?",
-            choices: ["3", "5", "2"],
-            correctAnswer: "5"
-        },
-        {
-            question: "What is 7 * 9?",
-            choices: ["56", "63", "72"],
-            correctAnswer: "63"
-        },
-        // Add more questions here
-    ];
-
+    let highScores = [];
+    let questions = [];
     let currentQuestionIndex = 0;
     let score = 0;
     let timer;
     let timeLeft = 60; // 60-second timer
 
+    function initializeQuestions() {
+        questions = [
+            {
+                question: "What is 2 + 2?",
+                choices: ["3", "4", "5"],
+                correctAnswer: "4"
+            },
+            {
+                question: "What is 5 * 6?",
+                choices: ["20", "25", "30"],
+                correctAnswer: "30"
+            },
+            {
+                question: "What is 10 / 2?",
+                choices: ["2", "5", "10"],
+                correctAnswer: "5"
+            },
+            {
+                question: "What is 8 - 3?",
+                choices: ["3", "5", "2"],
+                correctAnswer: "5"
+            },
+            {
+                question: "What is 7 * 9?",
+                choices: ["56", "63", "72"],
+                correctAnswer: "63"
+            },
+            // Add more questions here
+        ];
+    }
+
     function startQuiz() {
+        initializeQuestions();
         startButton.style.display = "none";
-        quizContainer.style.display = "block"; // Show the quiz container
+        quizContainer.style.display = "block";
         questionContainer.style.display = "block";
         showQuestion(currentQuestionIndex);
         startTimer();
@@ -74,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
             answerMessage.classList.remove("incorrect");
             answerMessage.classList.add("correct");
         } else {
-            timeLeft -= 5; // Subtract 5 seconds for incorrect answer
+            timeLeft -= 5;
             answerMessage.textContent = "Incorrect!";
             answerMessage.classList.remove("correct");
             answerMessage.classList.add("incorrect");
@@ -91,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function startTimer() {
         timer = setInterval(() => {
             timeLeft--;
-            timerDisplay.textContent = `Time Left: ${timeLeft}s`; // Update timer display
+            timerDisplay.textContent = `Time Left: ${timeLeft}s`;
             if (timeLeft <= 0) {
                 endQuiz();
             }
@@ -103,9 +109,8 @@ document.addEventListener("DOMContentLoaded", function () {
         questionContainer.style.display = "none";
         resultContainer.style.display = "block";
         scoreDisplay.textContent = score;
-        // Display the timer result
         resultContainer.appendChild(timerDisplay);
-        submitScoreButton.disabled = false; // Enable submit score button
+        submitScoreButton.disabled = false;
     }
 
     submitScoreButton.addEventListener("click", () => {
@@ -114,16 +119,14 @@ document.addEventListener("DOMContentLoaded", function () {
             const scoreEntry = { initials: initials, score: score };
             highScores.push(scoreEntry);
 
-            // Sort high scores by score (descending order)
             highScores.sort((a, b) => b.score - a.score);
 
-            // Display high scores
             displayHighScores();
 
             initialsInput.value = "";
             resultContainer.style.display = "none";
-            highScoresButton.style.display = "block";
-            submitScoreButton.disabled = true; // Disable submit score button after submission
+            highScoresList.style.display = "block";
+            submitScoreButton.disabled = true;
         } else {
             alert("Please enter your initials.");
         }
@@ -141,6 +144,12 @@ document.addEventListener("DOMContentLoaded", function () {
     highScoresButton.addEventListener("click", () => {
         quizContainer.style.display = "none";
         highScoresList.style.display = "block";
+        playAgainButton.style.display = "block";
+    });
+
+    playAgainButton.addEventListener("click", () => {
+        highScoresList.style.display = "none";
+        startQuiz();
     });
 
     startButton.addEventListener("click", startQuiz);
